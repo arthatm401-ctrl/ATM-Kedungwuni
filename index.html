@@ -142,19 +142,15 @@ footer {
 
 <div class="card">
 <h2 style="text-align:center;">Profil Perusahaan</h2>
-
 <p>
 KSP Artha Tunas Mandiri Kedungwuni adalah koperasi simpan pinjam yang memberikan solusi keuangan cepat, aman, dan terpercaya.
 </p>
-
 <p>
 Berlandaskan azas <b>kekeluargaan dan gotong royong</b>, kami hadir untuk meningkatkan kesejahteraan anggota.
 </p>
-
 </div>
 
 <div class="grid">
-
 <div class="card">
 <h3>Legalitas</h3>
 <p>✔ Terdaftar resmi</p>
@@ -173,7 +169,6 @@ Berlandaskan azas <b>kekeluargaan dan gotong royong</b>, kami hadir untuk mening
 <img src="kegiatan2.jpg" style="width:100%;border-radius:10px;">
 <p>Dukungan UMKM anggota.</p>
 </div>
-
 </div>
 
 </div>
@@ -197,25 +192,7 @@ Berlandaskan azas <b>kekeluargaan dan gotong royong</b>, kami hadir untuk mening
 <h3>Simulasi Pinjaman</h3>
 <input type="number" id="pinjam" placeholder="Jumlah Pinjaman">
 <input type="number" id="bulan" placeholder="Tenor (bulan)">
-<button onclick="<script>
-function hitung(){
-let p = document.getElementById('pinjam').value;
-let b = document.getElementById('bulan').value;
-
-let bunga = 0.02;
-let total = p + (p * bunga * b);
-let cicilan = total / b;
-
-/* PEMBULATAN KE RIBUAN */
-let bulat = Math.ceil(cicilan / 1000) * 1000;
-
-/* FORMAT RUPIAH */
-let rupiah = bulat.toLocaleString('id-ID');
-
-document.getElementById('hasil').innerHTML = 
-"Cicilan per bulan: Rp " + rupiah;
-}
-</script>">Hitung</button>
+<button onclick="hitung()">Hitung</button>
 <p id="hasil"></p>
 </div>
 
@@ -234,7 +211,6 @@ document.getElementById('hasil').innerHTML =
 
 <!-- LELANG -->
 <div id="lelang" class="hidden">
-
 <div class="card">
 <div style="display:flex;flex-wrap:wrap;gap:15px;">
 
@@ -255,12 +231,10 @@ Hubungi
 
 </div>
 </div>
-
 </div>
 
 <!-- LOKASI -->
 <div id="lokasi" class="hidden">
-
 <div class="card">
 <h3>Lokasi Kami</h3>
 <p>Jl. Raya Pekajangan No 43</p>
@@ -268,7 +242,6 @@ Hubungi
 <iframe src="https://www.google.com/maps?q=-6.9493783,109.650155&z=17&output=embed"
 width="100%" height="250"></iframe>
 </div>
-
 </div>
 
 </div>
@@ -284,6 +257,7 @@ pages.forEach(p=>document.getElementById(p).classList.add('hidden'));
 document.getElementById(page).classList.remove('hidden');
 }
 
+/* SIMULASI + PEMBULATAN */
 function hitung(){
 let p=document.getElementById('pinjam').value;
 let b=document.getElementById('bulan').value;
@@ -292,9 +266,17 @@ let bunga = 0.02;
 let total = p + (p * bunga * b);
 let cicilan = total / b;
 
-document.getElementById('hasil').innerHTML="Cicilan per bulan: Rp "+Math.round(cicilan);
+/* BULATKAN KE RIBUAN */
+let bulat = Math.ceil(cicilan / 1000) * 1000;
+
+/* FORMAT RUPIAH */
+let rupiah = bulat.toLocaleString('id-ID');
+
+document.getElementById('hasil').innerHTML =
+"Estimasi cicilan per bulan: <b>Rp " + rupiah + "</b>";
 }
 
+/* AUTO WA */
 function kirimWA(){
 let nama = document.getElementById("nama").value;
 let alamat = document.getElementById("alamat").value;
