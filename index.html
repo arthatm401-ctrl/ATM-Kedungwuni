@@ -14,7 +14,6 @@ body {
   background:#f4f8f6;
 }
 
-/* HEADER */
 header {
   background:white;
   padding:15px;
@@ -22,7 +21,6 @@ header {
   border-bottom:3px solid #2e7d32;
 }
 
-/* NAV */
 nav {
   position:sticky;
   top:0;
@@ -44,14 +42,12 @@ nav a:hover {
   background:#1b5e20;
 }
 
-/* CONTAINER */
 .container {
   padding:20px;
   max-width:1100px;
   margin:auto;
 }
 
-/* HERO */
 .hero {
   background:linear-gradient(135deg,#2e7d32,#66bb6a);
   color:white;
@@ -60,7 +56,6 @@ nav a:hover {
   text-align:center;
 }
 
-/* CARD */
 .card {
   background:white;
   padding:20px;
@@ -69,14 +64,12 @@ nav a:hover {
   box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-/* GRID */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:15px;
 }
 
-/* INPUT */
 input {
   width:100%;
   padding:12px;
@@ -85,7 +78,6 @@ input {
   border:1px solid #ccc;
 }
 
-/* BUTTON */
 button {
   width:100%;
   padding:12px;
@@ -101,7 +93,6 @@ button:hover {
   background:#1b5e20;
 }
 
-/* WA FLOAT */
 .wa-float {
   position:fixed;
   bottom:20px;
@@ -113,7 +104,6 @@ button:hover {
   text-decoration:none;
 }
 
-/* FOOTER */
 footer {
   text-align:center;
   padding:15px;
@@ -144,6 +134,12 @@ footer {
 
 <div class="card">
 <h2 style="text-align:center;">Profil Perusahaan</h2>
+
+<!-- FOTO DENGAN CROP -->
+<div style="width:100%;height:460px;overflow:hidden;border-radius:12px;margin-bottom:15px;">
+  <img src="kantor.jpg" style="width:100%;transform:translateY(-120px);">
+</div>
+
 <p>
 KSP Artha Tunas Mandiri Kedungwuni adalah koperasi simpan pinjam yang memberikan solusi keuangan cepat, aman, dan terpercaya.
 </p>
@@ -260,7 +256,7 @@ pages.forEach(p=>document.getElementById(p).classList.add('hidden'));
 document.getElementById(page).classList.remove('hidden');
 }
 
-/* SIMULASI (SUDAH DIPERBAIKI) */
+/* SIMULASI + PEMBULATAN 1000 */
 function hitung(){
 let p = parseFloat(document.getElementById('pinjam').value);
 let b = parseInt(document.getElementById('bulan').value);
@@ -274,16 +270,14 @@ let bunga = 0.02;
 let total = p + (p * bunga * b);
 let cicilan = total / b;
 
-/* PEMBULATAN KE 1000 */
 let bulat = Math.ceil(cicilan / 1000) * 1000;
-
 let rupiah = bulat.toLocaleString('id-ID');
 
 document.getElementById('hasil').innerHTML =
 "Estimasi cicilan per bulan: <b>Rp " + rupiah + "</b>";
 }
 
-/* AUTO WA (TIDAK DIUBAH) */
+/* AUTO WA */
 function kirimWA(){
 let nama = document.getElementById("nama").value;
 let alamat = document.getElementById("alamat").value;
