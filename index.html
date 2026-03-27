@@ -257,26 +257,30 @@ pages.forEach(p=>document.getElementById(p).classList.add('hidden'));
 document.getElementById(page).classList.remove('hidden');
 }
 
-/* SIMULASI + PEMBULATAN */
+/* SIMULASI (SUDAH DIPERBAIKI) */
 function hitung(){
-let p=document.getElementById('pinjam').value;
-let b=document.getElementById('bulan').value;
+let p = parseFloat(document.getElementById('pinjam').value);
+let b = parseInt(document.getElementById('bulan').value);
+
+if(isNaN(p) || isNaN(b) || b <= 0){
+  document.getElementById('hasil').innerHTML = "Masukkan data yang valid";
+  return;
+}
 
 let bunga = 0.02;
 let total = p + (p * bunga * b);
 let cicilan = total / b;
 
-/* BULATKAN KE RIBUAN */
+/* PEMBULATAN KE 1000 */
 let bulat = Math.ceil(cicilan / 1000) * 1000;
 
-/* FORMAT RUPIAH */
 let rupiah = bulat.toLocaleString('id-ID');
 
 document.getElementById('hasil').innerHTML =
 "Estimasi cicilan per bulan: <b>Rp " + rupiah + "</b>";
 }
 
-/* AUTO WA */
+/* AUTO WA (TIDAK DIUBAH) */
 function kirimWA(){
 let nama = document.getElementById("nama").value;
 let alamat = document.getElementById("alamat").value;
