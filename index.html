@@ -197,7 +197,25 @@ Berlandaskan azas <b>kekeluargaan dan gotong royong</b>, kami hadir untuk mening
 <h3>Simulasi Pinjaman</h3>
 <input type="number" id="pinjam" placeholder="Jumlah Pinjaman">
 <input type="number" id="bulan" placeholder="Tenor (bulan)">
-<button onclick="hitung()">Hitung</button>
+<button onclick="<script>
+function hitung(){
+let p = document.getElementById('pinjam').value;
+let b = document.getElementById('bulan').value;
+
+let bunga = 0.02;
+let total = p + (p * bunga * b);
+let cicilan = total / b;
+
+/* PEMBULATAN KE RIBUAN */
+let bulat = Math.ceil(cicilan / 1000) * 1000;
+
+/* FORMAT RUPIAH */
+let rupiah = bulat.toLocaleString('id-ID');
+
+document.getElementById('hasil').innerHTML = 
+"Cicilan per bulan: Rp " + rupiah;
+}
+</script>">Hitung</button>
 <p id="hasil"></p>
 </div>
 
