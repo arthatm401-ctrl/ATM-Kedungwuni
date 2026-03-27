@@ -6,16 +6,21 @@
 <title>KSP Artha Tunas Mandiri</title>
 
 <style>
-* { box-sizing: border-box; }
-body { margin:0; font-family: Arial; background:#f0f7f3; }
+body {
+  margin:0;
+  font-family:'Segoe UI', Arial;
+  background:#f4f8f6;
+}
 
+/* HEADER */
 header {
   background:white;
-  padding:10px;
+  padding:15px;
   text-align:center;
   border-bottom:3px solid #2e7d32;
 }
 
+/* NAV */
 nav {
   position:sticky;
   top:0;
@@ -25,33 +30,76 @@ nav {
 
 nav a {
   flex:1;
-  padding:12px;
+  padding:14px;
   color:white;
-  text-align:center;
   text-decoration:none;
-  font-weight:bold;
+  text-align:center;
+  font-weight:600;
+  cursor:pointer;
 }
 
-.container { padding:15px; }
+nav a:hover {
+  background:#1b5e20;
+}
 
+/* CONTAINER */
+.container {
+  padding:20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* HERO */
 .hero {
-  background:linear-gradient(135deg,#43a047,#66bb6a);
+  background:linear-gradient(135deg,#2e7d32,#66bb6a);
   color:white;
-  padding:25px;
-  border-radius:12px;
+  padding:40px 20px;
+  border-radius:16px;
   text-align:center;
 }
 
+/* CARD */
 .card {
   background:white;
-  padding:15px;
-  margin-top:15px;
-  border-radius:12px;
-  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  padding:20px;
+  margin-top:20px;
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.hidden { display:none; }
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
 
+/* INPUT */
+input {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+/* BUTTON */
+button {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  background:#2e7d32;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+button:hover {
+  background:#1b5e20;
+}
+
+/* WA FLOAT */
 .wa-float {
   position:fixed;
   bottom:20px;
@@ -63,34 +111,21 @@ nav a {
   text-decoration:none;
 }
 
-input {
-  width:100%;
-  padding:10px;
-  margin-top:10px;
-}
-
-button {
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  background:#2e7d32;
-  color:white;
-  border:none;
-  border-radius:8px;
-}
-
+/* FOOTER */
 footer {
   text-align:center;
-  padding:10px;
-  font-size:12px;
+  padding:15px;
+  font-size:13px;
 }
+
+.hidden { display:none; }
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="logo.png" style="max-width:250px;">
+<img src="logo.png" style="max-width:220px;">
 </header>
 
 <nav>
@@ -102,127 +137,79 @@ footer {
 
 <div class="container">
 
-<!-- HOME (PROFIL) -->
+<!-- HOME -->
 <div id="home">
 
 <div class="card">
-<h3>Profil Perusahaan</h3>
+<h2 style="text-align:center;">Profil Perusahaan</h2>
+
 <p>
-<section id="profil" style="padding: 24px; background-color: #f9f9f9;">
-    <div style="max-width: 1000px; margin: auto;">
-        
-        <h2 style="text-align: center; color: #2c3e50;">Profil Perusahaan</h2>
-        <h3 style="text-align: center; color: #27ae60;">KSP Artha Tunas Mandiri Kedungwuni</h3>
-
-        <p style="text-align: justify; line-height: 1.8;">
-            KSP Artha Tunas Mandiri Kedungwuni merupakan lembaga keuangan berbasis koperasi yang hadir untuk memberikan solusi keuangan yang mudah, cepat, dan terpercaya bagi masyarakat, khususnya pelaku usaha mikro, kecil, dan menengah (UMKM).
-        </p>
-
-        <p style="text-align: justify; line-height: 1.8;">
-            Berdiri dengan semangat kebersamaan, kami menjunjung tinggi nilai <b>kekeluargaan, kepercayaan, dan gotong royong</b> sebagai fondasi utama dalam setiap pelayanan. Kami percaya bahwa kemajuan ekonomi dapat dicapai melalui kerja sama yang solid antar anggota.
-        </p>
-
-        <hr>
-
-        <h3 style="color: #2c3e50;">Visi</h3>
-        <p>
-            Menjadi koperasi simpan pinjam yang sehat, terpercaya, dan mampu meningkatkan kesejahteraan anggota serta masyarakat secara berkelanjutan.
-        </p>
-
-        <h3 style="color: #2c3e50;">Misi</h3>
-        <ul style="line-height: 1.8;">
-            <li>Memberikan pelayanan keuangan yang cepat, mudah, dan transparan</li>
-            <li>Mendukung pertumbuhan usaha anggota melalui pembiayaan yang tepat</li>
-            <li>Meningkatkan kesejahteraan anggota dengan prinsip keadilan</li>
-            <li>Menjalankan usaha koperasi berdasarkan azas kekeluargaan dan gotong royong</li>
-            <li>Membangun hubungan jangka panjang yang saling menguntungkan</li>
-        </ul>
-
-        <h3 style="color: #2c3e50;">Nilai-Nilai Kami</h3>
-        <ul style="line-height: 1.8;">
-            <li><b>Kekeluargaan</b> – Mengutamakan kebersamaan dalam setiap keputusan</li>
-            <li><b>Kepercayaan</b> – Menjaga amanah anggota dengan penuh tanggung jawab</li>
-            <li><b>Profesionalisme</b> – Memberikan pelayanan terbaik secara konsisten</li>
-            <li><b>Transparansi</b> – Terbuka dalam setiap proses dan informasi</li>
-            <li><b>Kepedulian</b> – Tumbuh bersama anggota dan masyarakat</li>
-        </ul>
-
-        <h3 style="color: #2c3e50;">Produk & Layanan</h3>
-        <ul style="line-height: 1.8;">
-            <li>Simpanan Anggota (Simpanan Pokok, Wajib, dan Sukarela)</li>
-            <li>Pinjaman Modal Usaha</li>
-            <li>Pinjaman Multiguna</li>
-            <li>Layanan Top Up Pinjaman</li>
-            <li>Pendampingan dan konsultasi usaha</li>
-        </ul>
-
-        <h3 style="color: #2c3e50;">Keunggulan Kami</h3>
-        <ul style="line-height: 1.0;">
-            <li>Proses pengajuan cepat dan mudah</li>
-            <li>Persyaratan ringan</li>
-            <li>Pelayanan ramah dan profesional</li>
-            <li>Sistem angsuran fleksibel</li>
-            <li>Dekat dengan masyarakat dan pelaku usaha</li>
-        </ul>
-
-        <div style="text-align: center; margin-top: 30px;">
-            <h3 style="color: #27ae60;">“Bersama Tumbuh, Bersama Sejahtera”</h3>
-        </div>
-
-    </div>
-</section>.
+KSP Artha Tunas Mandiri Kedungwuni adalah koperasi simpan pinjam yang memberikan solusi keuangan cepat, aman, dan terpercaya.
 </p>
+
+<p>
+Berlandaskan azas <b>kekeluargaan dan gotong royong</b>, kami hadir untuk meningkatkan kesejahteraan anggota.
+</p>
+
 </div>
+
+<div class="grid">
 
 <div class="card">
 <h3>Legalitas</h3>
 <p>✔ Terdaftar resmi</p>
-<p>✔ Alamat jelas & dapat dikunjungi</p>
-<p>✔ Sistem transparan</p>
+<p>✔ Alamat jelas</p>
+<p>✔ Transparan</p>
 </div>
 
 <div class="card">
 <h3>Kegiatan Karyawan</h3>
-<img src="kegiatan1.jpg" style="width:50%;border-radius:10px;">
-<p>Kegiatan pelayanan dan pendampingan nasabah.</p>
+<img src="kegiatan1.jpg" style="width:100%;border-radius:10px;">
+<p>Pelayanan nasabah profesional.</p>
 </div>
 
 <div class="card">
 <h3>Kegiatan Nasabah</h3>
-<img src="kegiatan2.jpg" style="width:50%;border-radius:10px;">
-<p>Dukungan terhadap usaha nasabah UMKM.</p>
+<img src="kegiatan2.jpg" style="width:100%;border-radius:10px;">
+<p>Dukungan UMKM anggota.</p>
 </div>
 
 </div>
 
-<!-- PENGAJUAN (JUALAN) -->
+</div>
+
+<!-- PENGAJUAN -->
 <div id="pengajuan" class="hidden">
 
 <div class="hero">
-<h2>Butuh Dana Cepat? Cair 1-2 Hari!</h2>
-<p>Ajukan sekarang untuk kebutuhan usaha & pribadi</p>
-
-<a href="https://wa.me/6287848666448" target="_blank"
-style="background:#25D366;padding:10px 15px;border-radius:8px;color:white;text-decoration:none;">
-Ajukan Sekarang
-</a>
+<h2>Ajukan Pinjaman Sekarang</h2>
+<p>Cair 1–2 Hari • Syarat Mudah • Angsuran Ringan</p>
 </div>
 
-<div class="card">✔ Proses cepat tanpa ribet</div>
-<div class="card">✔ Cicilan ringan & fleksibel</div>
+<div class="grid">
+<div class="card">⚡ Proses Cepat</div>
+<div class="card">💰 Plafon Fleksibel</div>
+<div class="card">📄 Syarat Mudah</div>
+<div class="card">🤝 Aman & Terpercaya</div>
+</div>
 
 <div class="card">
 <h3>Simulasi Pinjaman</h3>
-<input type="number" id="pinjam" placeholder="Jumlah pinjaman">
-<input type="number" id="bulan" placeholder="Tenor">
+<input type="number" id="pinjam" placeholder="Jumlah Pinjaman">
+<input type="number" id="bulan" placeholder="Tenor (bulan)">
 <button onclick="hitung()">Hitung</button>
 <p id="hasil"></p>
 </div>
 
 <div class="card">
-<h3>Testimoni</h3>
-<p>"Cepat cair dan sangat membantu"</p>
-<p>"Pelayanan ramah dan aman"</p>
+<h3>Form Pengajuan Cepat</h3>
+
+<input type="text" id="nama" placeholder="Nama Lengkap">
+<input type="text" id="alamat" placeholder="Alamat">
+<input type="number" id="nominal" placeholder="Jumlah Pinjaman">
+<input type="number" id="tenor" placeholder="Tenor (bulan)">
+
+<button onclick="kirimWA()">Kirim Pengajuan via WhatsApp</button>
 </div>
 
 </div>
@@ -231,17 +218,16 @@ Ajukan Sekarang
 <div id="lelang" class="hidden">
 
 <div class="card">
-<div style="display:flex; flex-wrap:wrap; gap:15px;">
+<div style="display:flex;flex-wrap:wrap;gap:15px;">
 
 <div style="flex:1;">
 <img src="lelang1.jpg" style="width:100%;border-radius:10px;">
 </div>
 
 <div style="flex:1;">
-<h3>Rumah Tinggal</h3>
-<p>Pekajangan</p>
+<h3>Rumah Pekajangan</h3>
 <h2 style="color:#2e7d32;">Rp 600.000.000</h2>
-<p>LT 152 m² | LB 100 m²</p>
+<p>LT 152m² | LB 100m²</p>
 
 <a href="https://wa.me/6287848666448" target="_blank"
 style="display:block;background:#2e7d32;color:white;padding:10px;text-align:center;border-radius:8px;">
@@ -256,20 +242,22 @@ Hubungi
 
 <!-- LOKASI -->
 <div id="lokasi" class="hidden">
+
 <div class="card">
-<h3>Lokasi</h3>
+<h3>Lokasi Kami</h3>
 <p>Jl. Raya Pekajangan No 43</p>
 
 <iframe src="https://www.google.com/maps?q=-6.9493783,109.650155&z=17&output=embed"
 width="100%" height="250"></iframe>
 </div>
+
 </div>
 
 </div>
 
 <footer>© 2026 KSP Artha Tunas Mandiri</footer>
 
-<a href="https://wa.me/6287848666448" class="wa-float">💬 WA</a>
+<a href="#" onclick="kirimWA()" class="wa-float">💬</a>
 
 <script>
 function showPage(page){
@@ -282,10 +270,32 @@ function hitung(){
 let p=document.getElementById('pinjam').value;
 let b=document.getElementById('bulan').value;
 
-let total=p*(1+(0.02*b));
-let cicilan=total/b;
+let bunga = 0.02;
+let total = p + (p * bunga * b);
+let cicilan = total / b;
 
-document.getElementById('hasil').innerHTML="Cicilan: Rp "+Math.round(cicilan);
+document.getElementById('hasil').innerHTML="Cicilan per bulan: Rp "+Math.round(cicilan);
+}
+
+function kirimWA(){
+let nama = document.getElementById("nama").value;
+let alamat = document.getElementById("alamat").value;
+let nominal = document.getElementById("nominal").value;
+let tenor = document.getElementById("tenor").value;
+
+let pesan = "Halo Admin KSP Artha Tunas Mandiri%0A%0A"
++ "Saya tertarik mengajukan pinjaman.%0A"
++ "Mohon dibantu prosesnya.%0A%0A"
++ "Data saya:%0A"
++ "Nama: " + nama + "%0A"
++ "Alamat: " + alamat + "%0A"
++ "Pengajuan: Rp " + nominal + "%0A"
++ "Tenor: " + tenor + " bulan%0A%0A"
++ "Saya siap melengkapi persyaratan.";
+
+let nomor = "6287848666448";
+
+window.open("https://wa.me/"+nomor+"?text="+pesan, "_blank");
 }
 </script>
 
