@@ -49,13 +49,32 @@ nav a:hover {
 }
 
 .hero {
-  background:linear-gradient(135deg,#2e7d32,#66bb6a);
-  color:white;
-  padding:40px 20px;
-  border-radius:16px;
-  text-align:center;
+  background: url('cs.jpg') left / cover no-repeat;
+  color: rgb(4, 181, 72);
+  padding: 60px 50px;
+  border-radius: 16px;
+  position: left;
+  overflow: hidden;
 }
 
+/* posisi teks */
+.hero h2,
+.hero p {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  text-align: left;
+}
+
+/* biar lebih enak dilihat */
+.hero h2 {
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.hero p {
+  font-size:14px;
+}
 .card {
   background:white;
   padding:20px;
